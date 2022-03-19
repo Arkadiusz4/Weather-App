@@ -1,16 +1,15 @@
-# weather_app
+# Weather App
 
-A new Flutter project.
+Weather App using Open Weather Map API. App made in Flutter and Dart. Designed in [Figma](https://www.figma.com/file/QM4OIZCi2XHpcD94S7nVMv/Weather-app?node-id=1%3A2).
 
-## Getting Started
+## Table of Contents
 
-This project is a starting point for a Flutter application.
+##
 
-A few resources to get you started if this is your first Flutter project:
+## Created by:
+* Design: 
+  * [Arkadiusz Mika](https://github.com/Arkadiusz4)
+  * Maciej Surga
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* Programming:
+  *  [Arkadiusz Mika](https://github.com/Arkadiusz4)
