@@ -4,7 +4,11 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 
 ## Table of Contents
 
-##
+## Weather App UI
+
+## Description
+
+## Screenshots
 
 ## Created by:
 * Design: 
