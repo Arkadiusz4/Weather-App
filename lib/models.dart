@@ -61,6 +61,17 @@ class WeatherInfo {
   }
 }
 
+class WindInfo {
+  final double windInfo;
+
+  WindInfo({required this.windInfo});
+
+  factory WindInfo.fromJson(Map<String, dynamic> json) {
+    final windInfo = json['speed'];
+    return WindInfo(windInfo: windInfo);
+  }
+}
+
 class HumidityInfo {
   final int humidity;
 
@@ -105,6 +116,17 @@ class TemperatureInfo {
   }
 }
 
+class TemperatureFeelsLikeInfo {
+  final double feelsLike;
+
+  TemperatureFeelsLikeInfo({required this.feelsLike});
+
+  factory TemperatureFeelsLikeInfo.fromJson(Map<String, dynamic> json) {
+    final feelsLike = json['feels_like'];
+    return TemperatureFeelsLikeInfo(feelsLike: feelsLike);
+  }
+}
+
 class WeatherResponse {
   final String cityName;
   final TemperatureInfo temperatureInfo;
@@ -112,6 +134,8 @@ class WeatherResponse {
   final PressureInfo pressureInfo;
   final HumidityInfo humidityInfo;
   final CloudsInfo cloudsInfo;
+  final TemperatureFeelsLikeInfo feelsLikeInfo;
+  final WindInfo windInfo;
 
 //https://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png
   String get iconUrl {
@@ -173,6 +197,8 @@ class WeatherResponse {
     required this.pressureInfo,
     required this.humidityInfo,
     required this.cloudsInfo,
+    required this.feelsLikeInfo,
+    required this.windInfo,
   });
 
   factory WeatherResponse.fromJson(Map<String, dynamic> json) {
@@ -180,6 +206,9 @@ class WeatherResponse {
 
     final temperatureInfoJson = json['main'];
     final temperatureInfo = TemperatureInfo.fromJson(temperatureInfoJson);
+
+    final feelsLikeInfoJson = json['main'];
+    final feelsLikeInfo = TemperatureFeelsLikeInfo.fromJson(feelsLikeInfoJson);
 
     final pressureInfoJson = json['main'];
     final pressureInfo = PressureInfo.fromJson(pressureInfoJson);
@@ -189,6 +218,9 @@ class WeatherResponse {
 
     final cloudsInfoJson = json['clouds'];
     final cloudsInfo = CloudsInfo.fromJson(cloudsInfoJson);
+
+    final windInfoJson = json['wind'];
+    final windInfo = WindInfo.fromJson(windInfoJson);
 
     final weatherInfoJson = json['weather'][0];
     final weatherInfo = WeatherInfo.fromJson(weatherInfoJson);
@@ -200,6 +232,8 @@ class WeatherResponse {
       pressureInfo: pressureInfo,
       humidityInfo: humidityInfo,
       cloudsInfo: cloudsInfo,
+      feelsLikeInfo: feelsLikeInfo,
+      windInfo: windInfo,
     );
   }
 }

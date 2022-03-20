@@ -162,15 +162,41 @@ class _HomeState extends State<Home> {
                                         WeatherCard(
                                             text: 'Humidity',
                                             subtext: '${_response?.humidityInfo.humidity}%',
+                                            width: MediaQuery.of(context).size.width / 3 - 30,
                                             image: 'assets/images/humidity.png'),
                                        WeatherCard(
                                             text: 'Clouds',
                                             subtext: '${_response?.cloudsInfo.clouds}%',
+                                            width: MediaQuery.of(context).size.width / 3 - 30,
                                             image: 'assets/images/clouds.png'),
                                         WeatherCard(
                                             text: 'Pressure',
                                             subtext: '${_response?.pressureInfo.pressure} hPa',
+                                            width: MediaQuery.of(context).size.width / 3 - 30,
                                             image: 'assets/images/pressure.png'),
+                                      ],
+                                    ),
+                                    
+                                  ),
+                                  SizedBox(height: 40,),
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                        top: 40, left: 15, right: 15),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        WeatherCard(
+                                            text: 'Perceived temperature',
+                                            subtext: '${_response?.feelsLikeInfo.feelsLike.round()} °C',
+                                            width: MediaQuery.of(context).size.width / 2 - 30,
+                                            image: 'assets/images/temperature.jpg'),
+                                       WeatherCard(
+                                            text: 'Wind',
+                                            subtext: '${_response?.windInfo.windInfo} km/h',
+                                            width: MediaQuery.of(context).size.width / 2 - 30,
+                                            image: 'assets/images/clouds.png'),
+                                        
                                       ],
                                     ),
                                   ),

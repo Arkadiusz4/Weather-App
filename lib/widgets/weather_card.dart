@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,16 +7,18 @@ class WeatherCard extends StatelessWidget {
     required this.text,
     required this.subtext,
     required this.image,
+    required this.width,
   });
 
   final String text, subtext, image;
+  final double width;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(right: 10),
       height: 200,
-      width: MediaQuery.of(context).size.width / 3 - 30,
+      width: width,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         image: DecorationImage(
