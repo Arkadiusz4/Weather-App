@@ -33,7 +33,6 @@ class WeatherCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 15, right: 5, left: 5),
             child: Text(
-              
               text,
               textAlign: TextAlign.center,
               style: GoogleFonts.raleway(
@@ -45,7 +44,6 @@ class WeatherCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 45),
             child: Text(
-              
               subtext,
               textAlign: TextAlign.center,
               style: GoogleFonts.lato(
