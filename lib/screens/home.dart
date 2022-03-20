@@ -197,6 +197,7 @@ class _HomeState extends State<Home> {
                                             width: MediaQuery.of(context).size.width / 2 - 30,
                                             image: 'assets/images/clouds.png'),
                                         
+                                        
                                       ],
                                     ),
                                   ),
