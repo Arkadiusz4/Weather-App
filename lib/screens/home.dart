@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:weather_app/data_service.dart';
-import 'package:weather_app/models.dart';
+import 'package:weather_app/data_service/data_service_current.dart';
+import 'package:weather_app/models/models_current.dart';
+
 import 'package:weather_app/widgets/weather_card.dart';
 
 class Home extends StatefulWidget {
@@ -11,9 +12,9 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final _cityTextController = TextEditingController();
-  final _dataService = DataService();
+  final _dataServiceCurrent = DataServiceCurrent();
 
-  WeatherResponse? _response;
+  WeatherResponse? _responseCurrent;
 
   @override
   Widget build(BuildContext context) {
@@ -24,12 +25,12 @@ class _HomeState extends State<Home> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
-                  (_response != null)
-                      ? _response!.backgroundImage
+                  (_responseCurrent != null)
+                      ? _responseCurrent!.backgroundImage
                       : 'assets/images/normal.jpg',
                 ),
                 fit: BoxFit.fitHeight,
-                colorFilter: (_response != null)
+                colorFilter: (_responseCurrent != null)
                     ? ColorFilter.mode(
                         Colors.black.withOpacity(0.3), BlendMode.darken)
                     : null,
@@ -89,14 +90,14 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
-                if (_response != null)
+                if (_responseCurrent != null)
                   Expanded(
                     child: SingleChildScrollView(
                       padding: EdgeInsets.only(top: 100),
                       child: Column(
                         children: [
                           Text(
-                            '${_response?.temperatureInfo.temperature.round()} °C',
+                            '${_responseCurrent?.temperatureInfo.temperature.round()} °C',
                             style: GoogleFonts.lato(
                                 color: Colors.white,
                                 fontSize: 80,
@@ -105,12 +106,13 @@ class _HomeState extends State<Home> {
                           SizedBox(
                             height: 80,
                           ),
-                          Image.asset(_response!.iconUrl, color: Colors.white, height: 80),
+                          Image.asset(_responseCurrent!.iconUrl,
+                              color: Colors.white, height: 80),
                           SizedBox(
                             height: 10,
                           ),
                           Text(
-                            '${_response?.weatherInfo.description.toUpperCase()}',
+                            '${_responseCurrent?.weatherInfo.description.toUpperCase()}',
                             style: GoogleFonts.openSans(
                                 color: Colors.white,
                                 fontSize: 20,
@@ -145,7 +147,7 @@ class _HomeState extends State<Home> {
                                   ),
                                   Center(
                                     child: Text(
-                                      '${_response?.cityName}',
+                                      '${_responseCurrent?.cityName}',
                                       style: GoogleFonts.lato(
                                         fontSize: 25,
                                         fontWeight: FontWeight.w700,
@@ -161,24 +163,42 @@ class _HomeState extends State<Home> {
                                       children: [
                                         WeatherCard(
                                             text: 'Humidity',
-                                            subtext: '${_response?.humidityInfo.humidity}%',
-                                            width: MediaQuery.of(context).size.width / 3 - 30,
-                                            image: 'assets/images/humidity.png'),
-                                       WeatherCard(
+                                            subtext:
+                                                '${_responseCurrent?.humidityInfo.humidity}%',
+                                            width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 -
+                                                30,
+                                            image:
+                                                'assets/images/humidity.png'),
+                                        WeatherCard(
                                             text: 'Clouds',
-                                            subtext: '${_response?.cloudsInfo.clouds}%',
-                                            width: MediaQuery.of(context).size.width / 3 - 30,
+                                            subtext:
+                                                '${_responseCurrent?.cloudsInfo.clouds}%',
+                                            width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 -
+                                                30,
                                             image: 'assets/images/clouds.png'),
                                         WeatherCard(
                                             text: 'Pressure',
-                                            subtext: '${_response?.pressureInfo.pressure} hPa',
-                                            width: MediaQuery.of(context).size.width / 3 - 30,
-                                            image: 'assets/images/pressure.png'),
+                                            subtext:
+                                                '${_responseCurrent?.pressureInfo.pressure} hPa',
+                                            width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    3 -
+                                                30,
+                                            image:
+                                                'assets/images/pressure.png'),
                                       ],
                                     ),
-                                    
                                   ),
-                                  SizedBox(height: 40,),
+                                  SizedBox(
+                                    height: 40,
+                                  ),
                                   Padding(
                                     padding: EdgeInsets.only(
                                         top: 40, left: 15, right: 15),
@@ -188,16 +208,25 @@ class _HomeState extends State<Home> {
                                       children: [
                                         WeatherCard(
                                             text: 'Perceived temperature',
-                                            subtext: '${_response?.feelsLikeInfo.feelsLike.round()} °C',
-                                            width: MediaQuery.of(context).size.width / 2 - 30,
-                                            image: 'assets/images/temperature.jpg'),
-                                       WeatherCard(
+                                            subtext:
+                                                '${_responseCurrent?.feelsLikeInfo.feelsLike.round()} °C',
+                                            width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    2 -
+                                                30,
+                                            image:
+                                                'assets/images/temperature.jpg'),
+                                        WeatherCard(
                                             text: 'Wind',
-                                            subtext: '${_response?.windInfo.windInfo} km/h',
-                                            width: MediaQuery.of(context).size.width / 2 - 30,
-                                            image: 'assets/images/clouds.png'),
-                                        
-                                        
+                                            subtext:
+                                                '${_responseCurrent?.windInfo.windInfo} km/h',
+                                            width: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    2 -
+                                                30,
+                                            image: 'assets/images/wind.jpg'),
                                       ],
                                     ),
                                   ),
@@ -218,7 +247,10 @@ class _HomeState extends State<Home> {
   }
 
   void _search() async {
-    final response = await _dataService.getWeather(_cityTextController.text);
-    setState(() => _response = response);
+    final responseCurrent =
+        await _dataServiceCurrent.getWeather(_cityTextController.text);
+    setState(() {
+      _responseCurrent = responseCurrent;
+    });
   }
 }
