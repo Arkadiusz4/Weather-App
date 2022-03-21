@@ -19,6 +19,8 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 
 <a name="plugins"></a>
 ## Plugins and Techonologies
+* [Dart](https://dart.dev/) 
+* [Flutter](https://flutter.dev/) 
 * [Http](https://pub.dev/packages/http)
 * [Google Fonts](https://pub.dev/packages/google_fonts)
 
