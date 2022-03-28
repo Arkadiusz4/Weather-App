@@ -1,15 +1,16 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:weather_app/models.dart';
+import 'package:weather_app/models/models_current.dart';
 
-class DataService {
+class DataServiceCurrent {
   Future<WeatherResponse> getWeather(String city) async {
     //api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
 
     final queryParameters = {
       'q': city,
-      'appid': 'YOUR APP ID CODE',
+      'appid': '90e1be249ed1e3190e4f7148d7f8c811',
+      'exclude': 'hourly',
       'units': 'metric',
     };
 
