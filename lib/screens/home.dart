@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/data_service/data_service_current.dart';
@@ -15,6 +16,17 @@ class _HomeState extends State<Home> {
   final _dataServiceCurrent = DataServiceCurrent();
 
   WeatherResponse? _responseCurrent;
+
+  detectConnection(connection) async {
+    connection = await (Connectivity().checkConnectivity());
+
+    if (connection != ConnectivityResult.mobile &&
+        connection != ConnectivityResult.wifi) {
+      // noNetworkError(context);
+    } else {
+       //ge();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
