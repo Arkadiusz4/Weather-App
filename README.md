@@ -6,7 +6,8 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 1. [Weather App UI](#weather-app-ui)
 2. [Description](#description)
 3. [Screenshots](#screenshots)
-4. [Plugins and Techonologies](#plugins)
+4. [Features](#features)
+5. [Plugins and Techonologies](#plugins)
 
 <a name="weather-app-ui"></a>
 ## Weather App UI
@@ -17,8 +18,25 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 <a name="screenshots"></a>
 ## Screenshots
 
+
+
+<a name="features"></a>
+## Features
+- [x] Searching city from Search Bar.
+- [x] Current weather.
+- [ ] No network connection alert.
+- [ ] City not found alert.
+- [ ] Searching city by geolocalization.
+- [ ] Hourly and daily weather forecast.
+- [ ] Weather charts (like rainfall).
+- [ ] Responsive UI from diffrent devices.
+
 <a name="plugins"></a>
 ## Plugins and Techonologies
+* [Dart](https://dart.dev/) 
+* [Flutter](https://flutter.dev/) 
+* [Http](https://pub.dev/packages/http)
+* [Google Fonts](https://pub.dev/packages/google_fonts)
 
 ## Created by:
 * Design: 
