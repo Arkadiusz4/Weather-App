@@ -1,8 +1,9 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/data_service/data_service_current.dart';
+import 'package:weather_app/data_service/data_service_onecall.dart';
 import 'package:weather_app/models/models_current.dart';
+import 'package:weather_app/models/models_onecall.dart';
 
 import 'package:weather_app/widgets/weather_card.dart';
 
@@ -14,22 +15,18 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final _cityTextController = TextEditingController();
   final _dataServiceCurrent = DataServiceCurrent();
+  final _dataServiceOneCall = DataServiceOneCall();
 
-  WeatherResponse? _responseCurrent;
+  WeatherResponseCurrent? _responseCurrent;
+  WeatherResponseOnecall? _responseOnecall;
 
-  detectConnection(connection) async {
-    connection = await (Connectivity().checkConnectivity());
-
-    if (connection != ConnectivityResult.mobile &&
-        connection != ConnectivityResult.wifi) {
-      // noNetworkError(context);
-    } else {
-       //ge();
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
+
+    _responseCurrent?.coordinates.lat == _responseOnecall?.lat;
+    _responseCurrent?.coordinates.long == _responseOnecall?.long;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -242,6 +239,10 @@ class _HomeState extends State<Home> {
                                       ],
                                     ),
                                   ),
+                                  SizedBox(height: 30),
+                                  
+                                  Container(height: 100, color: Colors.amber, child: Text('${_responseOnecall?.lat}'),),
+                                  
                                 ],
                               ),
                             ],
@@ -261,8 +262,11 @@ class _HomeState extends State<Home> {
   void _search() async {
     final responseCurrent =
         await _dataServiceCurrent.getWeather(_cityTextController.text);
+        
+        final responseOneCall = await _dataServiceOneCall.getWeatherOneCall(_cityTextController.text);
     setState(() {
       _responseCurrent = responseCurrent;
+      _responseOnecall = responseOneCall;
     });
   }
 }

@@ -46,6 +46,18 @@
 
 */
 
+class Coordinates {
+  final double long, lat;
+
+  Coordinates({required this.long, required this.lat});
+
+  factory Coordinates.fromJson(Map<String, dynamic> json) {
+    final lat = json['lat'];
+    final long = json['lon'];
+    return Coordinates(lat: lat, long: long);
+  }
+}
+
 class WeatherInfo {
   final String description, icon;
   final int id;
@@ -127,7 +139,7 @@ class TemperatureFeelsLikeInfo {
   }
 }
 
-class WeatherResponse {
+class WeatherResponseCurrent {
   final String cityName;
   final TemperatureInfo temperatureInfo;
   final WeatherInfo weatherInfo;
@@ -136,6 +148,7 @@ class WeatherResponse {
   final CloudsInfo cloudsInfo;
   final TemperatureFeelsLikeInfo feelsLikeInfo;
   final WindInfo windInfo;
+  final Coordinates coordinates;
 
 //https://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png
   String get iconUrl {
@@ -190,7 +203,7 @@ class WeatherResponse {
     }
   }
 
-  WeatherResponse({
+  WeatherResponseCurrent({
     required this.cityName,
     required this.temperatureInfo,
     required this.weatherInfo,
@@ -199,9 +212,10 @@ class WeatherResponse {
     required this.cloudsInfo,
     required this.feelsLikeInfo,
     required this.windInfo,
+    required this.coordinates,
   });
 
-  factory WeatherResponse.fromJson(Map<String, dynamic> json) {
+  factory WeatherResponseCurrent.fromJson(Map<String, dynamic> json) {
     final cityName = json['name'];
 
     final temperatureInfoJson = json['main'];
@@ -225,7 +239,10 @@ class WeatherResponse {
     final weatherInfoJson = json['weather'][0];
     final weatherInfo = WeatherInfo.fromJson(weatherInfoJson);
 
-    return WeatherResponse(
+    final coordinatesJson = json['coord'];
+    final coordinates = Coordinates.fromJson(coordinatesJson);
+
+    return WeatherResponseCurrent(
       cityName: cityName,
       temperatureInfo: temperatureInfo,
       weatherInfo: weatherInfo,
@@ -234,6 +251,7 @@ class WeatherResponse {
       cloudsInfo: cloudsInfo,
       feelsLikeInfo: feelsLikeInfo,
       windInfo: windInfo,
+      coordinates: coordinates,
     );
   }
 }
