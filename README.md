@@ -12,15 +12,18 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 <a name="weather-app-ui"></a>
 ## Weather App UI
 
+<img src="https://user-images.githubusercontent.com/71427558/161629895-4d932bbd-ae49-4056-9ebc-93df302f52ef.jpeg" height="750">
+
 <a name="description"></a>
 ## Description
 * In Home Screen there is Search Bar, in which you can find a city. 
 * In City Screen you can see an information about city you are interested in:
- * Temperature
- * Feels like temperature
- * Pressure
- * Wind
- * Humidity
+  * Temperature
+  * Feels like temperature
+  * Pressure
+  * Clouds
+  * Wind
+  * Humidity
  
 
 <a name="screenshots"></a>
