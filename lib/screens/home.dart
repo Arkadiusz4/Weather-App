@@ -1,3 +1,4 @@
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_app/data_service/data_service_current.dart';
@@ -20,10 +21,10 @@ class _HomeState extends State<Home> {
   WeatherResponseCurrent? _responseCurrent;
   WeatherResponseOnecall? _responseOnecall;
 
+  
 
   @override
   Widget build(BuildContext context) {
-
     _responseCurrent?.coordinates.lat == _responseOnecall?.lat;
     _responseCurrent?.coordinates.long == _responseOnecall?.long;
 
@@ -51,7 +52,7 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, right: 15, top: 30),
+                  padding: const EdgeInsets.only(left: 15, right: 15, top: 45),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -99,18 +100,17 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                 ),
+                
                 if (_responseCurrent != null)
-                  Expanded(
-                    child: SingleChildScrollView(
+                Expanded(
+                  child: SingleChildScrollView(
                       padding: EdgeInsets.only(top: 100),
                       child: Column(
                         children: [
                           Text(
                             '${_responseCurrent?.temperatureInfo.temperature.round()} °C',
                             style: GoogleFonts.lato(
-                                color: Colors.white,
-                                fontSize: 80,
-                                fontWeight: FontWeight.w600),
+                  color: Colors.white, fontSize: 80, fontWeight: FontWeight.w600),
                           ),
                           SizedBox(
                             height: 80,
@@ -123,9 +123,7 @@ class _HomeState extends State<Home> {
                           Text(
                             '${_responseCurrent?.weatherInfo.description.toUpperCase()}',
                             style: GoogleFonts.openSans(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w400),
+                  color: Colors.white, fontSize: 20, fontWeight: FontWeight.w400),
                           ),
                           SizedBox(
                             height: 70,
@@ -133,124 +131,91 @@ class _HomeState extends State<Home> {
                           Stack(
                             children: [
                               Container(
-                                height:
-                                    MediaQuery.of(context).size.height * 0.9,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(30),
-                                    topRight: Radius.circular(30),
-                                  ),
-                                  color: Colors.white,
-                                ),
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                    color: Colors.white,
+                  ),
                               ),
                               Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.only(
-                                        top: 10, bottom: 20),
-                                    child: Container(
-                                      width: 100,
-                                      height: 2.5,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                  Center(
-                                    child: Text(
-                                      '${_responseCurrent?.cityName}',
-                                      style: GoogleFonts.lato(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 40, left: 15, right: 15),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        WeatherCard(
-                                            text: 'Humidity',
-                                            subtext:
-                                                '${_responseCurrent?.humidityInfo.humidity}%',
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    3 -
-                                                30,
-                                            image:
-                                                'assets/images/humidity.png'),
-                                        WeatherCard(
-                                            text: 'Clouds',
-                                            subtext:
-                                                '${_responseCurrent?.cloudsInfo.clouds}%',
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    3 -
-                                                30,
-                                            image: 'assets/images/clouds.png'),
-                                        WeatherCard(
-                                            text: 'Pressure',
-                                            subtext:
-                                                '${_responseCurrent?.pressureInfo.pressure} hPa',
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    3 -
-                                                30,
-                                            image:
-                                                'assets/images/pressure.png'),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: 40,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                        top: 40, left: 15, right: 15),
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceAround,
-                                      children: [
-                                        WeatherCard(
-                                            text: 'Perceived temperature',
-                                            subtext:
-                                                '${_responseCurrent?.feelsLikeInfo.feelsLike.round()} °C',
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    2 -
-                                                30,
-                                            image:
-                                                'assets/images/temperature.jpg'),
-                                        WeatherCard(
-                                            text: 'Wind',
-                                            subtext:
-                                                '${_responseCurrent?.windInfo.windInfo} km/h',
-                                            width: MediaQuery.of(context)
-                                                        .size
-                                                        .width /
-                                                    2 -
-                                                30,
-                                            image: 'assets/images/wind.jpg'),
-                                      ],
-                                    ),
-                                  ),
-                                  SizedBox(height: 30),
-                                  
-                                  Container(height: 100, color: Colors.amber, child: Text('${_responseOnecall?.lat}'),),
-                                  
-                                ],
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, bottom: 20),
+                      child: Container(
+                        width: 100,
+                        height: 2.5,
+                        color: Colors.black,
+                      ),
+                    ),
+                    Center(
+                      child: Text(
+                        '${_responseCurrent?.cityName}',
+                        style: GoogleFonts.lato(
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 40, left: 15, right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          WeatherCard(
+                              text: 'Humidity',
+                              subtext:
+                                  '${_responseCurrent?.humidityInfo.humidity}%',
+                              width: MediaQuery.of(context).size.width / 3 - 30,
+                              image: 'assets/images/humidity.png'),
+                          WeatherCard(
+                              text: 'Clouds',
+                              subtext: '${_responseCurrent?.cloudsInfo.clouds}%',
+                              width: MediaQuery.of(context).size.width / 3 - 30,
+                              image: 'assets/images/clouds.png'),
+                          WeatherCard(
+                              text: 'Pressure',
+                              subtext:
+                                  '${_responseCurrent?.pressureInfo.pressure} hPa',
+                              width: MediaQuery.of(context).size.width / 3 - 30,
+                              image: 'assets/images/pressure.png'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 40, left: 15, right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          WeatherCard(
+                              text: 'Perceived temperature',
+                              subtext:
+                                  '${_responseCurrent?.feelsLikeInfo.feelsLike.round()} °C',
+                              width: MediaQuery.of(context).size.width / 2 - 30,
+                              image: 'assets/images/temperature.jpg'),
+                          WeatherCard(
+                              text: 'Wind',
+                              subtext:
+                                  '${_responseCurrent?.windInfo.windInfo} km/h',
+                              width: MediaQuery.of(context).size.width / 2 - 30,
+                              image: 'assets/images/wind.jpg'),
+                        ],
+                      ),
+                    ),
+                    SizedBox(height: 30),
+                  ],
                               ),
                             ],
                           ),
                         ],
                       ),
                     ),
-                  ),
+                ),
               ],
             ),
           ),
@@ -262,11 +227,14 @@ class _HomeState extends State<Home> {
   void _search() async {
     final responseCurrent =
         await _dataServiceCurrent.getWeather(_cityTextController.text);
-        
-        final responseOneCall = await _dataServiceOneCall.getWeatherOneCall(_cityTextController.text);
+
+    final responseOneCall =
+        await _dataServiceOneCall.getWeatherOneCall(_cityTextController.text);
     setState(() {
       _responseCurrent = responseCurrent;
       _responseOnecall = responseOneCall;
     });
   }
+
+ 
 }
