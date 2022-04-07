@@ -38,6 +38,7 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 <img src="https://user-images.githubusercontent.com/71427558/161627942-a7bb3852-257c-4a25-9b69-8f985b12993c.PNG" width="300"> <img src="https://user-images.githubusercontent.com/71427558/161627982-7dd5e32c-380f-4a0c-8574-0a9268b0cd0e.PNG" width="300">
 
 
+
 <a name="features"></a>
 ## Features
 - [x] Searching city from Search Bar.
