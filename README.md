@@ -43,7 +43,7 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 ## Features
 - [x] Searching city from Search Bar.
 - [x] Current weather.
-- [ ] No network connection alert.
+- [x] No network connection alert.
 - [ ] City not found alert.
 - [ ] Searching city by geolocalization.
 - [ ] Hourly and daily weather forecast.
