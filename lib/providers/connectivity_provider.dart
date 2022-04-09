@@ -7,12 +7,12 @@ import 'package:flutter/services.dart';
 class ConnectivityProvider with ChangeNotifier {
   Connectivity _connectivity = new Connectivity();
 
-  late bool _isOnline;
+  late bool _isOnline = true;
   bool get isOnline => _isOnline;
 
   startMonitoring() async {
     await initConnectivity();
-    _connectivity.onConnectivityChanged.listen((result) async {
+    _connectivity.onConnectivityChanged.listen((ConnectivityResult result) async {
       if (result == ConnectivityResult.none) {
         _isOnline = false;
         notifyListeners();
