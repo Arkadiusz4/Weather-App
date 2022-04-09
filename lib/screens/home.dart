@@ -127,6 +127,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               if (_responseCurrent != null)
+              (_responseCurrent?.cod != 404) ?
                 Expanded(
                   child: SingleChildScrollView(
                     padding: EdgeInsets.only(top: 100),
@@ -271,7 +272,7 @@ class _HomeState extends State<Home> {
                       ],
                     ),
                   ),
-                ),
+                ) : Container(color: Colors.amber,),
             ],
           ),
         ),

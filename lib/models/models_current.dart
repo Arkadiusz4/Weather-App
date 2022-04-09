@@ -149,6 +149,7 @@ class WeatherResponseCurrent {
   final TemperatureFeelsLikeInfo feelsLikeInfo;
   final WindInfo windInfo;
   final Coordinates coordinates;
+  final int cod;
 
 //https://openweathermap.org/img/wn/${weatherInfo.icon}@2x.png
   String get iconUrl {
@@ -213,6 +214,7 @@ class WeatherResponseCurrent {
     required this.feelsLikeInfo,
     required this.windInfo,
     required this.coordinates,
+    required this.cod,
   });
 
   factory WeatherResponseCurrent.fromJson(Map<String, dynamic> json) {
@@ -242,6 +244,9 @@ class WeatherResponseCurrent {
     final coordinatesJson = json['coord'];
     final coordinates = Coordinates.fromJson(coordinatesJson);
 
+    final cod = json['cod'];
+  
+
     return WeatherResponseCurrent(
       cityName: cityName,
       temperatureInfo: temperatureInfo,
@@ -252,6 +257,7 @@ class WeatherResponseCurrent {
       feelsLikeInfo: feelsLikeInfo,
       windInfo: windInfo,
       coordinates: coordinates,
+      cod: cod,
     );
   }
 }
