@@ -22,6 +22,7 @@ class DataServiceCurrent {
     print(response.body);
 
     final json = jsonDecode(response.body);
+
     return WeatherResponseCurrent.fromJson(json);
   }
 }
