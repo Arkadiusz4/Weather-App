@@ -37,7 +37,9 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 ### Detail Screen
 <img src="https://user-images.githubusercontent.com/71427558/161627942-a7bb3852-257c-4a25-9b69-8f985b12993c.PNG" width="300"> <img src="https://user-images.githubusercontent.com/71427558/161627982-7dd5e32c-380f-4a0c-8574-0a9268b0cd0e.PNG" width="300">
 
-
+---
+### No Internet Connection Screen
+<img src="https://user-images.githubusercontent.com/71427558/162610043-7856c46f-0440-401b-9b9c-c7bda9f57ff9.PNG" width="300">
 
 <a name="features"></a>
 ## Features
