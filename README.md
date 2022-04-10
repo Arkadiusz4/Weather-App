@@ -59,6 +59,7 @@ Weather App using Open Weather Map API. App made in Flutter and Dart. Designed i
 * [Http](https://pub.dev/packages/http)
 * [Google Fonts](https://pub.dev/packages/google_fonts)
 * [Provider](https://pub.dev/packages/provider)
+* [Connectivity](https://pub.dev/packages/connectivity_plus)
 
 ## Created by:
 * Design: 
