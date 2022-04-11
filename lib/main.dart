@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sizer/sizer.dart';
 import 'package:weather_app/providers/connectivity_provider.dart';
 
 import 'screens/home.dart';
@@ -18,13 +19,18 @@ class MyApp extends StatelessWidget {
           child: Home(),
         ),
       ],
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
-        home: Home(),
+      child: Sizer(
+        builder: (BuildContext context, Orientation orientation,
+            DeviceType deviceType) {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: Home(),
+          );
+        },
       ),
     );
   }
