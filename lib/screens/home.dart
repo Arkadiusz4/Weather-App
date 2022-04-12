@@ -155,6 +155,7 @@ class _HomeState extends State<Home> {
                                     color: Colors.white, height: 80),
                                 SizedBox(
                                   height: 10,
+                                  
                                 ),
                                 Text(
                                   '${_responseCurrent?.weatherInfo.description.toUpperCase()}',
