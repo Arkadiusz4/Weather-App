@@ -1,147 +1,213 @@
 /*
 {
-  "lat": 33.44,
-  "lon": -94.04,
-  "timezone": "America/Chicago",
-  "timezone_offset": -21600,
-  "current": {
-    "dt": 1618317040,
-    "sunrise": 1618282134,
-    "sunset": 1618333901,
-    "temp": 284.07,
-    "feels_like": 282.84,
-    "pressure": 1019,
-    "humidity": 62,
-    "dew_point": 277.08,
-    "uvi": 0.89,
-    "clouds": 0,
-    "visibility": 10000,
-    "wind_speed": 6,
-    "wind_deg": 300,
-    "weather": [
-      {
-        "id": 500,
-        "main": "Rain",
-        "description": "light rain",
-        "icon": "10d"
-      }
-    ],
-    "rain": {
-      "1h": 0.21
+ "queryCost": 1,
+ "latitude": 49.92026,
+ "longitude": 19.93024,
+ "resolvedAddress": "Olszowice, Świątniki Górne, Woj. Małopolskie, Polska",
+ "address": "Olszowice",
+ "timezone": "Europe/Warsaw",
+ "tzoffset": 2,
+ "description": "Similar temperatures continuing with a chance of rain tomorrow & Tuesday & a chance of snow Monday.",
+ "days": [
+  {
+   "datetime": "2022-04-15",
+   "datetimeEpoch": 1649973600,
+   "tempmax": 13.6,
+   "tempmin": 8.6,
+   "temp": 10.8,
+   "feelslikemax": 13.6,
+   "feelslikemin": 6.2,
+   "feelslike": 10.4,
+   "dew": 7.5,
+   "humidity": 80.5,
+   "precip": 7.3,
+   "precipprob": 100,
+   "precipcover": null,
+   "preciptype": [
+    "rain"
+   ],
+   "snow": 0,
+   "snowdepth": 0,
+   "windgust": 33.1,
+   "windspeed": 14.8,
+   "winddir": 255.6,
+   "pressure": 1018.7,
+   "cloudcover": 91.1,
+   "visibility": 13.9,
+   "solarradiation": 124.3,
+   "solarenergy": 10.9,
+   "uvindex": 5,
+   "severerisk": 10,
+   "sunrise": "05:47:54",
+   "sunriseEpoch": 1649994474,
+   "sunset": "19:33:50",
+   "sunsetEpoch": 1650044030,
+   "moonphase": 0.49,
+   "conditions": "Rain, Overcast",
+   "description": "Cloudy skies throughout the day with rain.",
+   "icon": "rain",
+   "stations": [
+    "EPKK",
+    "E6527"
+   ],
+   "source": "comb",
+   "hours": [
+    {
+     "datetime": "12:00:00",
+     "datetimeEpoch": 1650016800,
+     "temp": 11,
+     "feelslike": 11,
+     "humidity": 93.55,
+     "dew": 10,
+     "precip": 0,
+     "precipprob": 0,
+     "snow": 0,
+     "snowdepth": 0,
+     "preciptype": null,
+     "windgust": 22.3,
+     "windspeed": 11.2,
+     "winddir": 240,
+     "pressure": 1019,
+     "visibility": 6,
+     "cloudcover": 88,
+     "solarradiation": 419,
+     "solarenergy": 1.5,
+     "uvindex": 4,
+     "severerisk": 10,
+     "conditions": "Partially cloudy",
+     "icon": "partly-cloudy-day",
+     "stations": [
+      "EPKK",
+      "E6527"
+     ],
+     "source": "obs"
+    },
+    {
+     "datetime": "13:00:00",
+     "datetimeEpoch": 1650020400,
+     "temp": 11.8,
+     "feelslike": 11.8,
+     "humidity": 81.85,
+     "dew": 8.8,
+     "precip": 0.1,
+     "precipprob": 100,
+     "snow": 0,
+     "snowdepth": 0,
+     "preciptype": [
+      "rain"
+     ],
+     "windgust": 28.1,
+     "windspeed": 13.3,
+     "winddir": 301.4,
+     "pressure": 1020,
+     "visibility": 24.1,
+     "cloudcover": 100,
+     "solarradiation": 133,
+     "solarenergy": 0.5,
+     "uvindex": 1,
+     "severerisk": 10,
+     "conditions": "Rain, Overcast",
+     "icon": "rain",
+     "stations": [
+      "remote"
+     ],
+     "source": "obs"
     }
-  },
-    "minutely": [
-    {
-      "dt": 1618317060,
-      "precipitation": 0.205
-    },
-    ...
-  },
-    "hourly": [
-    {
-      "dt": 1618315200,
-      "temp": 282.58,
-      "feels_like": 280.4,
-      "pressure": 1019,
-      "humidity": 68,
-      "dew_point": 276.98,
-      "uvi": 1.4,
-      "clouds": 19,
-      "visibility": 306,
-      "wind_speed": 4.12,
-      "wind_deg": 296,
-      "wind_gust": 7.33,
-      "weather": [
-        {
-          "id": 801,
-          "main": "Clouds",
-          "description": "few clouds",
-          "icon": "02d"
-        }
-      ],
-      "pop": 0
-    },
-    ...
+   ]
   }
-    "daily": [
-    {
-      "dt": 1618308000,
-      "sunrise": 1618282134,
-      "sunset": 1618333901,
-      "moonrise": 1618284960,
-      "moonset": 1618339740,
-      "moon_phase": 0.04,
-      "temp": {
-        "day": 279.79,
-        "min": 275.09,
-        "max": 284.07,
-        "night": 275.09,
-        "eve": 279.21,
-        "morn": 278.49
-      },
-      "feels_like": {
-        "day": 277.59,
-        "night": 276.27,
-        "eve": 276.49,
-        "morn": 276.27
-      },
-      "pressure": 1020,
-      "humidity": 81,
-      "dew_point": 276.77,
-      "wind_speed": 3.06,
-      "wind_deg": 294,
-      "weather": [
-        {
-          "id": 500,
-          "main": "Rain",
-          "description": "light rain",
-          "icon": "10d"
-        }
-      ],
-      "clouds": 56,
-      "pop": 0.2,
-      "rain": 0.62,
-      "uvi": 1.93
-    },
-    ...
-    },
-    "alerts": [
-    {
-      "sender_name": "NWS Tulsa",
-      "event": "Heat Advisory",
-      "start": 1597341600,
-      "end": 1597366800,
-      "description": "...HEAT ADVISORY REMAINS IN EFFECT FROM 1 PM THIS AFTERNOON TO\n8 PM CDT THIS EVENING...\n* WHAT...Heat index values of 105 to 109 degrees expected.\n* WHERE...Creek, Okfuskee, Okmulgee, McIntosh, Pittsburg,\nLatimer, Pushmataha, and Choctaw Counties.\n* WHEN...From 1 PM to 8 PM CDT Thursday.\n* IMPACTS...The combination of hot temperatures and high\nhumidity will combine to create a dangerous situation in which\nheat illnesses are possible.",
-      "tags": [
-        "Extreme temperature value"
-        ]
-    },
-    ...
-  ]
-
-
-  https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
-*/
-
-class CoordinatesLat {
-  final double lat;
-
-  CoordinatesLat({required this.lat});
-
-  factory CoordinatesLat.fromJson(Map<String, dynamic> json) {
-    final lat = json['lat'];
-    return CoordinatesLat(lat: lat);
+ ],
+ "alerts": [],
+ "stations": {
+  "EPKK": {
+   "distance": 20076,
+   "latitude": 50.08,
+   "longitude": 19.8,
+   "useCount": 0,
+   "id": "EPKK",
+   "name": "EPKK",
+   "quality": 50,
+   "contribution": 0
+  },
+  "E6527": {
+   "distance": 25912,
+   "latitude": 50.153,
+   "longitude": 19.955,
+   "useCount": 0,
+   "id": "E6527",
+   "name": "EW6527 Krakow PL",
+   "quality": 0,
+   "contribution": 0
+  },
+  "EPKT": {
+   "distance": 86620,
+   "latitude": 50.47,
+   "longitude": 19.07,
+   "useCount": 0,
+   "id": "EPKT",
+   "name": "EPKT",
+   "quality": 50,
+   "contribution": 0
+  },
+  "LZTT": {
+   "distance": 97433,
+   "latitude": 49.07,
+   "longitude": 20.25,
+   "useCount": 0,
+   "id": "LZTT",
+   "name": "LZTT",
+   "quality": 50,
+   "contribution": 0
   }
+ },
+ "currentConditions": {
+  "datetime": "13:30:00",
+  "datetimeEpoch": 1650022200,
+  "temp": 12.9,
+  "feelslike": 12.9,
+  "humidity": 80.8,
+  "dew": 9.7,
+  "precip": 0.2,
+  "precipprob": null,
+  "snow": 0,
+  "snowdepth": 0,
+  "preciptype": null,
+  "windgust": null,
+  "windspeed": 9.5,
+  "winddir": 245,
+  "pressure": 1019,
+  "visibility": 10,
+  "cloudcover": 86.5,
+  "solarradiation": 543,
+  "solarenergy": 2,
+  "uvindex": 5,
+  "conditions": "Rain, Partially cloudy",
+  "icon": "rain",
+  "stations": [
+   "EPKT",
+   "EPKK",
+   "LZTT"
+  ],
+  "sunrise": "05:47:54",
+  "sunriseEpoch": 1649994474,
+  "sunset": "19:33:50",
+  "sunsetEpoch": 1650044030,
+  "moonphase": 0.49
+ }
 }
 
-class WeatherResponseOnecall {
-  final Null lat, long;
+  https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Olszowice?unitGroup=metric&key=QVDLJFCCQRM5296M7J975FP2W&contentType=json
+*/
 
-  WeatherResponseOnecall({required this.lat, required this.long});
+class WeatherResponseOnecall {
+  final String city;
+
+  WeatherResponseOnecall({
+    required this.city,
+  });
 
   factory WeatherResponseOnecall.fromJson(Map<String, dynamic> json) {
-    final lat = json['lat'];
-    final long = json['lon'];
-    return WeatherResponseOnecall(lat: lat, long: long,);
+    final city = json['address'];
+
+    return WeatherResponseOnecall(city: city);
   }
 }

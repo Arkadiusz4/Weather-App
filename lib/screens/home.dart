@@ -33,9 +33,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    _responseCurrent?.coordinates.lat == _responseOnecall?.lat;
-    _responseCurrent?.coordinates.long == _responseOnecall?.long;
-
     return Scaffold(
       body: pageUI(),
     );
@@ -155,7 +152,6 @@ class _HomeState extends State<Home> {
                                     color: Colors.white, height: 80),
                                 SizedBox(
                                   height: 10,
-                                  
                                 ),
                                 Text(
                                   '${_responseCurrent?.weatherInfo.description.toUpperCase()}',

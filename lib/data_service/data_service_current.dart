@@ -10,7 +10,6 @@ class DataServiceCurrent {
     final queryParameters = {
       'q': city,
       'appid': '90e1be249ed1e3190e4f7148d7f8c811',
-      'exclude': 'hourly',
       'units': 'metric',
     };
 
