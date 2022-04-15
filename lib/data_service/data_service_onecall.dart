@@ -5,17 +5,18 @@ import 'package:weather_app/models/models_onecall.dart';
 
 class DataServiceOneCall {
   Future<WeatherResponseOnecall> getWeatherOneCall(String city) async {
-    //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+    //https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Olszowice?unitGroup=metric&key=QVDLJFCCQRM5296M7J975FP2W&contentType=json
 
     final queryParameters = {
-      'q': city,
-      'appid': '90e1be249ed1e3190e4f7148d7f8c811',
-      'exclude': 'hourly',
-      'units': 'metric',
+      'unitGroup': 'metric',
+      'key': 'QVDLJFCCQRM5296M7J975FP2W',
+      'contentType': 'json',
     };
 
     final uri = Uri.https(
-        'api.openweathermap.org', '/data/2.5/onecall', queryParameters);
+        'weather.visualcrossing.com',
+        '/VisualCrossingWebServices/rest/services/timeline/${city}?',
+        queryParameters);
 
     final response_onecall = await http.get(uri);
 
